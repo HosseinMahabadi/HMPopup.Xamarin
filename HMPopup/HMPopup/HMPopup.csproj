@@ -3,17 +3,21 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;MonoAndroid10.0;xamarinios10</TargetFrameworks>
     <Version>1.0.23</Version>
-    <RepositoryUrl></RepositoryUrl>
+    <RepositoryUrl>https://github.com/HosseinMahabadi/HMPopup.Xamarin</RepositoryUrl>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <Authors>Hossein Mahabadi</Authors>
-    <Description>
-      
-    </Description>
+    <Description>Use this package to show popup window in your xamarin apps just like DisplayAlert
+For more information visit sample code in github
+
+https://instagram.com/hossein.mahabadi468</Description>
     <PackageLicenseFile>license.txt</PackageLicenseFile>
-    <PackageTags>xamarin, c#, mvvm</PackageTags>
+    <PackageTags>xamarin, c#, mvvm, popup, xamarinforms, xamarinandroid, xamarinios, mobile, android, ios, alertmessage, question, listselect</PackageTags>
+    <Copyright>Copyright (c) 2022-2027 Hossein Mahabadi</Copyright>
+    <PackageIcon>PopupIcon.png</PackageIcon>
+    <PackageIconUrl />
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -26,6 +30,10 @@
     <None Remove="Resources\Samim-Bold.ttf" />
     <None Remove="Resources\Samim-Medium.ttf" />
     <None Remove="Resources\Samim.ttf" />
+    <None Include="Resources\PopupIcon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -33,6 +41,13 @@
     <EmbeddedResource Include="Resources\Samim-Bold.ttf" />
     <EmbeddedResource Include="Resources\Samim-Medium.ttf" />
     <EmbeddedResource Include="Resources\Samim.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="readme.txt">
+      <Pack>true</Pack>
+      <PackagePath>readme.txt</PackagePath>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
