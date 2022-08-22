@@ -1,0 +1,48 @@
+<Project Sdk="MSBuild.Sdk.Extras/2.1.2">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;MonoAndroid10.0;xamarinios10</TargetFrameworks>
+    <Version>1.0.23</Version>
+    <RepositoryUrl></RepositoryUrl>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <Authors>Hossein Mahabadi</Authors>
+    <Description>
+      
+    </Description>
+    <PackageLicenseFile>license.txt</PackageLicenseFile>
+    <PackageTags>xamarin, c#, mvvm</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Message.png" />
+    <None Remove="Resources\Samim-Bold.ttf" />
+    <None Remove="Resources\Samim-Medium.ttf" />
+    <None Remove="Resources\Samim.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Message.png" />
+    <EmbeddedResource Include="Resources\Samim-Bold.ttf" />
+    <EmbeddedResource Include="Resources\Samim-Medium.ttf" />
+    <EmbeddedResource Include="Resources\Samim.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="license.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+
+    <PackageReference Include="HMExtension.Xamarin" Version="2.0.16" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2515" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
+  </ItemGroup>
+</Project>
