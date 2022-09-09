@@ -4,6 +4,12 @@
 [![NuGet](https://img.shields.io/nuget/dt/HMPopup.svg)](https://www.nuget.org/packages/HMPopup/)
 
 # HMPopup
-Use this package to show popup window in your xamarin apps just like DisplayAlert
+#### Use this package to show popup window in your xamarin apps just like DisplayAlert
+#### Android and iOS supported
 
+# Class structure
+#  ساختار کلاس
+```csharp
+public class Popup : IPopup
+```
 # Setup
