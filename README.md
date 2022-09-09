@@ -1,4 +1,4 @@
-![icon64](https://user-images.githubusercontent.com/4112014/139563161-b7f3cdba-e161-4f6c-80ae-45f0253c4340.png)
+![PopupIcon](https://user-images.githubusercontent.com/76768870/189304544-4df7f15d-876d-4646-b16c-4cb174cdd00f.png)
 
 [![NuGet](https://img.shields.io/nuget/v/HMPopup.svg)](https://www.nuget.org/packages/HMPopup/) 
 [![NuGet](https://img.shields.io/nuget/dt/HMPopup.svg)](https://www.nuget.org/packages/HMPopup/)
