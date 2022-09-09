@@ -8,8 +8,9 @@
 #### Android and iOS supported
 
 # Class structure
-#  ساختار کلاس
 ```csharp
 public class Popup : IPopup
 ```
+
 # Setup
+- `HMPopup` Available on NuGet: https://www.nuget.org/packages/HMPopup
