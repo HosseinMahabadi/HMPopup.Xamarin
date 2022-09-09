@@ -14,3 +14,23 @@ public class Popup : IPopup
 
 # Setup
 - `HMPopup` Available on NuGet: https://www.nuget.org/packages/HMPopup
+- #### Visual studio setup
+	- Tools -> NuGet Pckage Manager -> Package Manager Console -> Install-Package ShamsiDatePicker -Version 3.0.20
+
+# How to use
+- #### After setup the package use this line on Csharp file header: 
+```csharp
+using HMPopup;
+```
+- #### Then build your popup object from Popup class:
+```csharp
+readonly Popup popup = new Popup()
+{
+    OkTitle = "Ok",
+    CancelTitle = "Cancel",
+    NoTitle = "No",
+    YesTitle = "Yes",
+    SelectTitle = "Select",
+    FlowDirection = FlowDirection.LeftToRight
+};
+```
