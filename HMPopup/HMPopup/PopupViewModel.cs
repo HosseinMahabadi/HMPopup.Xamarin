@@ -4,8 +4,7 @@ using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using HMExtension.Xamarin.Mvvm;
-using HMExtension.Xamarin.Controls;
+using HMExtension.Xamarin;
 
 namespace HMPopup
 {

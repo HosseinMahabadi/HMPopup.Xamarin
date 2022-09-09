@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
-using HMExtension.Xamarin.Controls;
-using HMExtension.Xamarin.Component;
+using HMExtension.Xamarin;
 
 namespace HMPopup
 {
@@ -179,7 +178,7 @@ namespace HMPopup
                 {
                     new ColumnDefinition(){Width = new GridLength(1, GridUnitType.Auto)},
                     new ColumnDefinition(){Width = new GridLength(1, GridUnitType.Star)},
-                }
+                },
             };
 
             grid.Children.Add(CreateMessageIcon());
@@ -188,18 +187,21 @@ namespace HMPopup
             return grid;
         }
 
-        private ImageTinted CreateMessageIcon()
+        private Image CreateMessageIcon()
         {
-            ImageTinted image = new ImageTinted
+            Image image = new Image
             {
                 Source = ImageSource.FromResource("HMPopup.Resources.Message.png"),
                 HeightRequest = 40,
-                Margin = new Thickness(10, 0, 10, 10),
+                Margin = new Thickness(5, 0, 5, 10),
                 VerticalOptions = LayoutOptions.Start,
-                //TintColor = Globals.DarkPrimaryColor,
             };
 
-            image.SetAppThemeColor(ImageTinted.TintColorProperty, Globals.DarkPrimaryColor, Globals.LightPrimaryColor);
+            TintImageEffect effect = new TintImageEffect
+            {
+                TintColor = Application.Current.RequestedTheme == OSAppTheme.Light ? Globals.DarkPrimaryColor : Globals.LightPrimaryColor
+            };
+            image.Effects.Add(effect);
 
             return image;
         }
@@ -210,7 +212,7 @@ namespace HMPopup
             {
                 MaxLines = 20,
                 VerticalOptions = LayoutOptions.StartAndExpand,
-                Margin = new Thickness(10, 10, 0, 10),
+                Margin = new Thickness(5, 10, 5, 10),
                 FontSize = 15,
                 FontFamily = "samim",
             };

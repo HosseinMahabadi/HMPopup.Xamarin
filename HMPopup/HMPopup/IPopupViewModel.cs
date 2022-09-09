@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
 using System.Collections.ObjectModel;
-using HMExtension.Xamarin.Mvvm;
+using HMExtension.Xamarin;
 
 namespace HMPopup
 {
