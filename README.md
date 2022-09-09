@@ -3,7 +3,7 @@
 [![NuGet](https://img.shields.io/nuget/v/HMPopup.svg)](https://www.nuget.org/packages/HMPopup/) 
 [![NuGet](https://img.shields.io/nuget/dt/HMPopup.svg)](https://www.nuget.org/packages/HMPopup/)
 
-# Plugin.LocalNotification
+# HMPopup
 The local notification plugin provides a way to show local notifications from Xamarin.Forms / .Net MAUI apps.
 
 # Setup
