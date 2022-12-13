@@ -34,3 +34,25 @@ readonly Popup popup = new Popup()
     FlowDirection = FlowDirection.LeftToRight
 };
 ```
+- ## Showing message:
+```csharp
+await popup.ShowMessageAsync("Test Message", "This is a test message");
+```
+```csharp
+popup.ShowMessage("Test Message", "This is a test message");
+```
+- ## Light Theme
+
+![Message-Light](https://user-images.githubusercontent.com/76768870/192133645-3cf3067a-b497-4e08-a589-765178bf80cd.jpg)
+
+- ## Dark Theme
+
+![Message-Dark](https://user-images.githubusercontent.com/76768870/192133649-95179515-03b6-4e37-9a24-c17095c0a6b6.jpg)
+
+- ## Showing question:
+```csharp
+var answer = await popup.ShowQuestionAsync("Test Question", "Are you sure?");
+//answer is true if Yes selected and is false if No selected
+```
+
+```
