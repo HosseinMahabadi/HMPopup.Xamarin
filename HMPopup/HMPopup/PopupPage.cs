@@ -182,7 +182,7 @@ namespace HMPopup
             };
 
             grid.Children.Add(CreateMessageIcon());
-            grid.Children.Add(CreateMessageLabel());
+            grid.Children.Add(CreateMessageScrollView());
 
             return grid;
         }
@@ -206,11 +206,25 @@ namespace HMPopup
             return image;
         }
 
+        private ScrollView CreateMessageScrollView()
+        {
+            ScrollView scrollView = new ScrollView()
+            {
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                VerticalOptions = LayoutOptions.FillAndExpand,
+            };
+
+            scrollView.Content = CreateMessageLabel();
+            scrollView.SetValue(Grid.ColumnProperty, 1);
+
+            return scrollView;
+        }
+
         private Label CreateMessageLabel()
         {
             Label label = new Label()
             {
-                MaxLines = 20,
+                MaxLines = 200,
                 VerticalOptions = LayoutOptions.StartAndExpand,
                 Margin = new Thickness(5, 10, 5, 10),
                 FontSize = 15,
@@ -224,7 +238,6 @@ namespace HMPopup
             });
 
             label.SetAppThemeColor(Label.TextColorProperty, Globals.MainDarkColorControls, Globals.MainLightColorControls);
-            label.SetValue(Grid.ColumnProperty, 1);
 
             return label;
         }
