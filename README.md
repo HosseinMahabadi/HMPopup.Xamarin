@@ -51,7 +51,7 @@ popup.ShowMessage("Test Message", "This is a test message");
 
 - ## Showing question:
 ```csharp
-var answer = await popup.ShowQuestionAsync("Test Question", "Are you sure?");
+var answer = await englishPopup.ShowQuestionAsync("Test Question", "Are you sure?");
 //answer is true if Yes selected and is false if No selected
 ```
 
