@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms;
-using HMExtension.Xamarin;
+using HMExtension.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui;
+using System.Drawing;
 
 namespace HMPopup
 {
@@ -31,14 +33,62 @@ namespace HMPopup
             set => SetProperty(ref _message, value);
         }
 
-        private FlowDirection _messageFlowDirection = FlowDirection.LeftToRight;
-        public FlowDirection MessageFlowDirection
+        private string _headerFontFamily = "Arial";
+        public string HeaderFontFamily
         {
-            get => _messageFlowDirection;
-            set => SetProperty(ref _messageFlowDirection, value);
+            get => _headerFontFamily;
+            set => SetProperty(ref _headerFontFamily, value);
         }
 
-        private ObservableCollection<SelectableItem<T>> _items = new ObservableCollection<SelectableItem<T>>();
+        private double _headerFontSize = Application.Current.GetNamedSize(NamedSizes.Medium);
+        public double HeaderFontSize
+        {
+            get => _headerFontSize;
+            set => SetProperty(ref _headerFontSize, value);
+        }
+
+        private string _messageFontFamily = null;
+        public string MessageFontFamily
+        {
+            get => _messageFontFamily;
+            set => SetProperty(ref _messageFontFamily, value);
+        }
+        private double _messageFontSize = Application.Current.GetNamedSize(NamedSizes.Body);   
+        public double MessageFontSize
+        {
+            get => _messageFontSize;
+            set => SetProperty(ref _messageFontSize, value);
+        }
+
+        private string _footerFontFamily = null;
+        public string FooterFontFamily
+        {
+            get => _footerFontFamily;
+            set => SetProperty(ref _footerFontFamily, value);
+        }
+
+        private double _footerFontSize = Application.Current.GetNamedSize(NamedSizes.Body);
+        public double FooterFontSize
+        {
+            get => _footerFontSize;
+            set => SetProperty(ref _footerFontSize, value);
+        }
+
+        private string _listFontFamily = null;
+        public string ListFontFamily
+        {
+            get => _listFontFamily;
+            set => SetProperty(ref _listFontFamily, value);
+        }
+
+        private double _listFontSize = Application.Current.GetNamedSize(NamedSizes.Medium);
+        public double ListFontSize
+        {
+            get => _listFontSize;
+            set => SetProperty(ref _listFontSize, value);
+        }
+
+        private ObservableCollection<SelectableItem<T>> _items = [];
         public ObservableCollection<SelectableItem<T>> Items
         {
             get => _items;
@@ -53,10 +103,7 @@ namespace HMPopup
             {
                 if (_selectedItem != value)
                 {
-                    if (_selectedItem != null)
-                    {
-                        _selectedItem.UnSelect();
-                    }
+                    _selectedItem?.UnSelect();
                     _selectedItem = value;
                     OnPropertyChanged();
                     value.Select();

@@ -26,7 +26,7 @@ namespace HMPopup
         /// </summary>
         /// <param name="Title">Title to display the message at the top</param>
         /// <param name="Message">Message to display</param>
-        /// <param name="OkTitel">Confirm button title</param>
+        /// <param name="OkTitle">Confirm button title</param>
         /// <returns></returns>
         Task ShowMessageAsync(string Title, string Message, string OkTitle);
 

@@ -1,64 +1,72 @@
-<Project Sdk="MSBuild.Sdk.Extras/2.1.2">
-
+﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.44">
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;MonoAndroid10.0;xamarinios10</TargetFrameworks>
-    <Version>1.0.28</Version>
+    <Version>2.0.88</Version>
+    <UseMaui>True</UseMaui>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <SingleProject>true</SingleProject>
+    <OutputType>library</OutputType>
+    
     <RepositoryUrl>https://github.com/HosseinMahabadi/HMPopup.Xamarin</RepositoryUrl>
-    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    
     <Authors>Hossein Mahabadi</Authors>
-    <Description>Use this package to show popup window in your xamarin apps just like DisplayAlert
+    
+    <Description>Use this package to show popup window in your maui apps just like DisplayAlert
 For more information visit sample code in github
 
 https://instagram.com/hossein.mahabadi468</Description>
+    
     <PackageLicenseFile>license.txt</PackageLicenseFile>
-    <PackageTags>xamarin, c#, mvvm, popup, xamarinforms, xamarinandroid, xamarinios, mobile, android, ios, alertmessage, question, listselect</PackageTags>
+    
+    <PackageReadmeFile>readme.txt</PackageReadmeFile>
+    
+    <PackageTags>xamarin, maui, c#, mvvm, popup, xamarinforms, xamarinandroid, xamarinios, mobile, android, ios, alertmessage, question, listselect</PackageTags>
+    
     <Copyright>Copyright (c) 2022-2027 Hossein Mahabadi</Copyright>
+    
     <PackageIcon>PopupIcon.png</PackageIcon>
+    
     <PackageIconUrl />
+    
     <PackageReleaseNotes>Scroll view added to message label.</PackageReleaseNotes>
+    
+    <TargetFrameworks>net8.0-ios;net8.0-android;net8.0</TargetFrameworks>
+    
+    <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
+    
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.19041.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
   </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DebugType>portable</DebugType>
-    <DebugSymbols>true</DebugSymbols>
-  </PropertyGroup>
-
+  
   <ItemGroup>
     <None Remove="Resources\Message.png" />
-    <None Remove="Resources\Samim-Bold.ttf" />
-    <None Remove="Resources\Samim-Medium.ttf" />
-    <None Remove="Resources\Samim.ttf" />
     <None Include="Resources\PopupIcon.png">
       <Pack>True</Pack>
-      <PackagePath></PackagePath>
+      <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
-
+  
   <ItemGroup>
+    <EmbeddedResource Include="Resources\Fonts\*" />
     <EmbeddedResource Include="Resources\Message.png" />
-    <EmbeddedResource Include="Resources\Samim-Bold.ttf" />
-    <EmbeddedResource Include="Resources\Samim-Medium.ttf" />
-    <EmbeddedResource Include="Resources\Samim.ttf" />
   </ItemGroup>
-
+        
   <ItemGroup>
-    <Content Include="readme.txt">
-      <Pack>true</Pack>
-      <PackagePath>readme.txt</PackagePath>
-    </Content>
+    <PackageReference Include="HMExtension.Maui" Version="3.0.17" />
+    <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.61" />
+    <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.61" />
   </ItemGroup>
-
+  
   <ItemGroup>
-    <None Include="license.txt">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-
-    <PackageReference Include="HMExtension.Xamarin" Version="2.1.7" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2515" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
+    <None Include="readme.txt" Pack="true" PackagePath="\"/>
+    <None Include="license.txt" Pack="true" PackagePath="\"/>
   </ItemGroup>
 </Project>

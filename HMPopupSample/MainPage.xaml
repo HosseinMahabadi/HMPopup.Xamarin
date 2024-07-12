@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HMPopupSample.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout 
+            Padding="5,10">
+            <Label Text="Fill text box and press button for message popup test"
+               LineBreakMode="WordWrap"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center"
+               FontSize="17"
+               FontAttributes="Bold"
+               TextColor="Red"
+               Margin="2,10"/>
+            <Entry x:Name="messageEntry" 
+               Placeholder="Your message to show..." 
+               Margin="2"/>
+            <Button x:Name="englishMessageButton" 
+                Text="English message" 
+                Clicked="EnglishMessageButton_Clicked"
+                Margin="2"/>
+            <Button x:Name="persianMessageButton" 
+                Text="پیام فارسی" 
+                FontFamily="samim"
+                Clicked="PersianMessageButton_Clicked"
+                Margin="2"/>
+
+            <BoxView BackgroundColor="SteelBlue"
+                 HorizontalOptions="FillAndExpand"
+                 HeightRequest="2"
+                 Margin="5"/>
+
+            <Label Text="Press buttons for Question popup test"
+               LineBreakMode="WordWrap"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center"
+               FontSize="17"
+               FontAttributes="Bold"
+               TextColor="red"
+               Margin="2,10"/>
+            <Label x:Name="questionLabel" 
+               Text="Answer =>"
+               FontSize="16"
+               TextColor="Green"
+               Margin="2"/>
+            <Button x:Name="englishQuestionButton" 
+                Text="English question" 
+                Clicked="EnglishQuestionButton_Clicked"
+                Margin="2"/>
+            <Button x:Name="persianQuestionButton" 
+                Text="سوال فارسی"
+                    FontFamily="samim"
+                Clicked="PersianQuestionButton_Clicked"
+                Margin="2"/>
+
+            <BoxView BackgroundColor="SteelBlue"
+                 HorizontalOptions="FillAndExpand"
+                 HeightRequest="2"
+                 Margin="5"/>
+
+            <Label Text="Press buttons for Selection popup test"
+               LineBreakMode="WordWrap"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center"
+               FontSize="17"
+               FontAttributes="Bold"
+               TextColor="red"
+               Margin="2,10"/>
+            <Label x:Name="selectionLabel" 
+               Text="Selected item =>"
+               FontSize="16"
+               TextColor="Green"
+               Margin="2"/>
+            <Button x:Name="englishSelectionButton" 
+                Text="English selection" 
+                Clicked="EnglishSelectionButton_Clicked"
+                Margin="2"/>
+            <Button x:Name="persianSelectionButton" 
+                Text="انتخاب فارسی" 
+                    FontFamily="samim"
+                Clicked="PersianSelectionButton_Clicked"
+                Margin="2"/>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
