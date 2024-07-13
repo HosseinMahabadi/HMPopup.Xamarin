@@ -1,6 +1,6 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras/3.0.44">
   <PropertyGroup>
-    <Version>2.0.88</Version>
+    <Version>2.0.89</Version>
     <UseMaui>True</UseMaui>
     <ImplicitUsings>enable</ImplicitUsings>
     <SingleProject>true</SingleProject>
@@ -23,7 +23,7 @@ https://instagram.com/hossein.mahabadi468</Description>
     
     <PackageLicenseFile>license.txt</PackageLicenseFile>
     
-    <PackageReadmeFile>readme.txt</PackageReadmeFile>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
     
     <PackageTags>xamarin, maui, c#, mvvm, popup, xamarinforms, xamarinandroid, xamarinios, mobile, android, ios, alertmessage, question, listselect</PackageTags>
     
@@ -60,13 +60,13 @@ https://instagram.com/hossein.mahabadi468</Description>
   </ItemGroup>
         
   <ItemGroup>
-    <PackageReference Include="HMExtension.Maui" Version="3.0.17" />
-    <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.61" />
-    <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.61" />
+    <PackageReference Include="HMExtension.Maui" Version="3.0.18" />
+    <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.70" />
+    <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.70" />
   </ItemGroup>
   
   <ItemGroup>
-    <None Include="readme.txt" Pack="true" PackagePath="\"/>
-    <None Include="license.txt" Pack="true" PackagePath="\"/>
+    <None Include="license.txt" Pack="true" PackagePath="\" />
+    <None Include="readme.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 </Project>
